@@ -1,0 +1,16 @@
+class Uber {
+    constructor(baseFare, timeRate, distanceRate, surge) {
+        this.baseFare = baseFare;
+        this.timeRate = timeRate;
+        this.distanceRate = distanceRate;
+        this.surge = surge;
+    }
+
+    calculateFare(time, distance) {
+        return this.baseFare + (time * this.timeRate) + (distance * this.distanceRate) * this.surge;
+    }
+}
+
+const uber = new Uber(2.5, 0.25, 1.5, 1.2);
+const fare = uber.calculateFare(30, 10);
+console.log(`The fare for the ride is: $${fare}`);
